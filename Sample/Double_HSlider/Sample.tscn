@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbjsnrewmphpm"]
 
-[ext_resource type="Script" uid="uid://cp87p21m6se7l" path="res://Sample/Test.cs" id="1_jea42"]
+[ext_resource type="Script" uid="uid://cp87p21m6se7l" path="res://Sample/Double_HSlider/Test.cs" id="1_jea42"]
 [ext_resource type="Script" uid="uid://b7h1ctutvgjqo" path="res://addons/Double_HSlider/DoubleHSlider.cs" id="2_p4y33"]
 
 [node name="Sample" type="Control" node_paths=PackedStringArray("doubleHSlider", "lowerV", "upperV")]

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Godot-DoubleHSlider"
-run/main_scene="uid://dtvqpdmn6mwsv"
+run/main_scene="uid://bx02m03aof0ig"
 config/features=PackedStringArray("4.4", "C#", "Forward Plus")
 
 [dotnet]
@@ -20,4 +20,4 @@ project/assembly_name="Godot-DoubleHSlider"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Double_HSlider/plugin.cfg")
+enabled=PackedStringArray("res://addons/Double_HSlider_gd/plugin.cfg")
