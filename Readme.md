@@ -2,9 +2,9 @@
 
 # Double HSlider for Godot 4.4_双向滑动块
 
-### ▶ [C# version](https://github.com/WestRoam/Godot-DoubleHSlider?tab=readme-ov-file#-double_hslider-c-version)
+### ▶ [C# version](#-double_hslider-c-version)
 
-### ▶ [gd version](https://github.com/WestRoam/Godot-DoubleHSlider/edit/main/Readme.md#-double_hslider_gd-gd-version)
+### ▶ [gd version](#-double_hslider_gd-gd-version)
 
 ---
 
