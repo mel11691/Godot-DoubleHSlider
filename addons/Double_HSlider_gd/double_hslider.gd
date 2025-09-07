@@ -32,22 +32,20 @@ extends Range
 @export var lower_value: float = 2.0:
 	get: return _lower_value
 	set(value):
-		var new_val = snapped(clampf(value, ds_min_value, upper_value), ds_step)
-		if _lower_value != new_val:
-			_lower_value = new_val
-			queue_redraw()
-			lower_value_changed.emit(new_val)
-			ds_values_changed.emit(_lower_value, _upper_value)
+		_lower_value = snapped(value, ds_step)
+		notify_property_list_changed()
+		queue_redraw()
+		lower_value_changed.emit(_lower_value)
+		ds_values_changed.emit(_lower_value, _upper_value)
 
 @export var upper_value: float = 7.0:
 	get: return _upper_value
 	set(value):
-		var new_val = snapped(clampf(value, lower_value, ds_max_value), ds_step)
-		if _upper_value != new_val:
-			_upper_value = new_val
-			queue_redraw()
-			upper_value_changed.emit(new_val)
-			ds_values_changed.emit(_lower_value, _upper_value)
+		_upper_value = snapped(value, ds_step)
+		notify_property_list_changed()
+		queue_redraw()
+		upper_value_changed.emit(_upper_value)
+		ds_values_changed.emit(_lower_value, _upper_value)
 
 @export_group("Appearance")
 @export var slider_color := Color(0.176, 0.176, 0.176):
@@ -136,6 +134,15 @@ func _validate_values():
 	_lower_value = clamp(_lower_value,_ds_min_value,_ds_max_value)
 	_upper_value = clamp(snapped(_upper_value, ds_step), _lower_value, _ds_max_value)
 	_upper_value = clamp(_upper_value,_ds_min_value,_ds_max_value)
+
+
+func _validate_property(property: Dictionary):
+	if property.name == "lower_value":
+		property.hint = PROPERTY_HINT_RANGE
+		property.hint_string = "%f,%f,%f,hide_slider" % [ds_min_value, _upper_value, ds_step]
+	elif property.name == "upper_value":
+		property.hint = PROPERTY_HINT_RANGE
+		property.hint_string = "%f,%f,%f,hide_slider" % [_lower_value, ds_max_value, ds_step]
 
 
 func _gui_input(event: InputEvent):
